@@ -30,9 +30,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		2392BEDA2F3EAFB90083F29F /* SwiftUI-State */ = {
+		2392BEDA2F3EAFB90083F29F /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "SwiftUI-State";
+			path = App;
 			sourceTree = "<group>";
 		};
 		2392BEE82F3EAFBA0083F29F /* SwiftUI-StateTests */ = {
@@ -43,6 +43,16 @@
 		2392BEF22F3EAFBA0083F29F /* SwiftUI-StateUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "SwiftUI-StateUITests";
+			sourceTree = "<group>";
+		};
+		23E33E4D2F3FF5DB0088419F /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		23E33E4E2F3FF7630088419F /* State */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,10 +85,12 @@
 		2392BECF2F3EAFB90083F29F = {
 			isa = PBXGroup;
 			children = (
-				2392BEDA2F3EAFB90083F29F /* SwiftUI-State */,
+				2392BEDA2F3EAFB90083F29F /* App */,
 				2392BEE82F3EAFBA0083F29F /* SwiftUI-StateTests */,
 				2392BEF22F3EAFBA0083F29F /* SwiftUI-StateUITests */,
 				2392BED92F3EAFB90083F29F /* Products */,
+				23E33E4D2F3FF5DB0088419F /* Resources */,
+				23E33E4E2F3FF7630088419F /* State */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,7 +120,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				2392BEDA2F3EAFB90083F29F /* SwiftUI-State */,
+				2392BEDA2F3EAFB90083F29F /* App */,
+				23E33E4D2F3FF5DB0088419F /* Resources */,
+				23E33E4E2F3FF7630088419F /* State */,
 			);
 			name = "SwiftUI-State";
 			packageProductDependencies = (
@@ -414,7 +428,7 @@
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -445,7 +459,7 @@
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -465,7 +479,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-State.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftUI-State";
 			};
@@ -486,7 +500,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-State.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftUI-State";
 			};
@@ -505,7 +519,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "SwiftUI-State";
 			};
@@ -524,7 +538,7 @@
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "SwiftUI-State";
 			};

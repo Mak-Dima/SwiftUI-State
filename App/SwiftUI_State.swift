@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct SwiftUI_StateApp: App {
+struct SwiftUI_State: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StateBlankView()
         }
     }
 }
