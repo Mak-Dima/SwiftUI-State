@@ -19,9 +19,8 @@ struct StateBlankView: View {
     
     // This is actualy what @State wrapper do on first time storage cell created.
     // This is just stored property, so it will be initialized again with initialValue
-    // in case user move to another view and return back to this one, and every re-render
-    // in this case every time animationTrigger cause animatio.
-    var data: State<String> = State<String>(initialValue: "initial data`")
+    // in case storage cell destroed.
+    var data: State<String> = State<String>(initialValue: "initial data")
     
     var body: some View {
         VStack(alignment: .center ,spacing: 20) {
