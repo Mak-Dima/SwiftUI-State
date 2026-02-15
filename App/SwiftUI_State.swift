@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_State: App {
     var body: some Scene {
         WindowGroup {
-            StateBlankView()
+            StateBlankView(data: "data")
         }
     }
 }

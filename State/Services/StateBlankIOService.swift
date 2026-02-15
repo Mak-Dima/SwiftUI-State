@@ -9,7 +9,7 @@ import Foundation
 
 class StateBlackIOService {
     func read() -> StateBlankModel {
-        var data: StateBlankModel = .init(ID: "1", data: "StateBlank", description: "StateBlank")
+        let data: StateBlankModel = .init(ID: "1", data: "StateBlank", description: "StateBlank")
         
         return data
     }
