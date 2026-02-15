@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct StateBlankView: View {
-    @State var data: String
+    // When use @State attribute SwitUI does work for you.
+    // Call corresponding State<Value> constructor.
+    // Every time Struct recriated during re-render process
+    // SwiftUI will identifies the property by its identity(View type, position in the tree, .id())
+    // but ignore initialValue and reuses the value existing in storage cell.
+    // Storage cell is created in the heap.
     @State private var draft: String = ""
     @State private var animationTrigger: Bool = false
     
+    // This is actualy what @State wrapper do on first time storage cell created.
+    // This is just stored property, so it will be initialized again with initialValue
+    // in case user move to another view and return back to this one, and every re-render
+    // in this case every time animationTrigger cause animatio.
+    var data: State<String> = State<String>(initialValue: "initial data`")
+    
     var body: some View {
         VStack(alignment: .center ,spacing: 20) {
-            Text(data)
+            //wrappedWalue is a property provides access to the value's data.
+            Text(data.wrappedValue)
                 .keyframeAnimator(initialValue: 1.0, trigger: animationTrigger) { content, value in
                     content
                         .scaleEffect(x: value, y: value)
@@ -27,7 +39,8 @@ struct StateBlankView: View {
             TextField("Enter new data", text: $draft)
                 .submitLabel(.return)
                 .onSubmit {
-                    data = draft
+                    //wrappedWalue is a property provides access to the value's data.
+                    data.wrappedValue = draft
                     animationTrigger.toggle()
                     draft.removeAll()
                 }
@@ -38,6 +51,6 @@ struct StateBlankView: View {
 }
 
 #Preview {
-    StateBlankView(data: "data")
+    StateBlankView(data: State<String>(initialValue: "initial preview data"))
 }
 
