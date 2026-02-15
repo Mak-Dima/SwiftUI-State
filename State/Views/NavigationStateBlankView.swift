@@ -12,17 +12,13 @@ struct NavigationStateBlankView: View {
     
     var body: some View {
         TabView {
-            Tab {
+            Tab("Data", systemImage: "book") {
                 StateBlankView()
                     .id(resetTocken)
-            } label: {
-                Text("Data")
             }
-            
-            Tab {
+                
+            Tab("Reset", systemImage: "trash") {
                 EmptyBlankView(tocken: $resetTocken)
-            } label: {
-                Text("Reset")
             }
         }
     }

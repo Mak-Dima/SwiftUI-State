@@ -35,6 +35,7 @@ struct StateBlankView: View {
                         LinearKeyframe(1.0, duration: 0.5)
                     }
                 }
+            
             TextField("Enter new data", text: $draft)
                 .submitLabel(.return)
                 .onSubmit {
@@ -43,9 +44,13 @@ struct StateBlankView: View {
                     animationTrigger.toggle()
                     draft.removeAll()
                 }
-                .border(.secondary)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .textFieldStyle(.roundedBorder)
         .padding(20)
+        .background(LinearGradient(colors: [.orange, .red], startPoint: .top, endPoint: .bottom).blur(radius: 10))
+        .ignoresSafeArea()
+        .shadow(radius: 20)
     }
 }
 
