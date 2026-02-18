@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct BindingBlankView: View {
+    @State var bindableData: String = "Parent Data"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(bindableData)
     }
 }
 
