@@ -15,11 +15,13 @@ struct BindingChildView: View {
     // instead of storing data directly.
     @Binding var data: String?
     
+    var value: Binding<String?>
+    
     var body: some View {
         ZStack {
             VStack(alignment: .center, spacing: 20) {
                 Text(data ?? "No data")
-                Text(data ?? "No data")
+                Text(value.wrappedValue ?? "No data")
             }
             .ignoresSafeArea()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -39,7 +41,8 @@ struct BindingChildView: View {
 }
 
 #Preview {
-    @Previewable @State var text: String? = "Preview Data"
+    @Previewable @State var dataText: String? = "Preview Data"
+    @Previewable @State var valueText: String? = "Preview Value"
     // When applaying $ prefix to a @State property return its projectedValue.
-    BindingChildView(data: $text)
+    BindingChildView(data: $dataText, value: $valueText)
 }
