@@ -20,7 +20,9 @@ struct BindingBlankView: View {
                 
                 VStack {
                     Text(bindableData ?? "No Data")
+                        .swingTextAnimationStartRight()
                     Text(bindableValue.wrappedValue ?? "No Data")
+                        .swingTextAnimationStartLeft()
 
                     NavigationLink {
                         BindingChildView(
@@ -32,10 +34,7 @@ struct BindingBlankView: View {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundStyle(Color.orange)
-                                .phaseAnimator([true, false]) { content, phase in
-                                    content.frame(maxWidth: phase ? 200 : 190, maxHeight: 100)
-                                }
-                            
+                                .pulseFrameAnimation(color: .yellow, width: 150, height: 100)
                             Text("Tap")
                                 .foregroundStyle(Color.white)
                         }
