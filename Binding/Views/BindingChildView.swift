@@ -21,7 +21,15 @@ struct BindingChildView: View {
         ZStack {
             VStack(alignment: .center, spacing: 20) {
                 Text(data ?? "No data")
+                    .phaseAnimator([true, false]) { content, phase in
+                        content.rotationEffect(phase ? .degrees(5) : .degrees(-5))
+                    } animation: { phase in
+                        phase ? .bouncy(duration: 0.5) : .spring(duration: 0.5)
+                    }
                 Text(value.wrappedValue ?? "No data")
+                    .phaseAnimator([true, false]) { content, phase in
+                        content.rotationEffect(phase ? .degrees(-5) : .degrees(5))
+                    }
             }
             .ignoresSafeArea()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
