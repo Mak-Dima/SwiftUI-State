@@ -41,11 +41,7 @@ struct BindingChildView: View {
                     .foregroundStyle (
                         RadialGradient(colors: [.orange, .white], center: .center, startRadius: 50, endRadius: 180).opacity(0.2)
                     )
-                    .phaseAnimator([true, false]) {content, phase in
-                        content
-                        .frame(width: phase ? 300 : 290, height: phase ? 300 : 290)
-                        .shadow(color: .white, radius: phase ? 5 : 20)
-                    }
+                    .pulseFrameAnimation(color: .white, width: 300, height: 300)
             }
         }
     }

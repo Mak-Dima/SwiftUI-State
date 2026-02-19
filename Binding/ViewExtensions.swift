@@ -18,3 +18,11 @@ extension View {
         self.modifier(SwingTextAnimationStartRight())
     }
 }
+
+extension View {
+    func pulseFrameAnimation(color: Color, width: CGFloat, height: CGFloat) -> some View {
+        self.modifier(
+            PulseFrameAnimation(color: color, width: width, height: height)
+        )
+    }
+}
