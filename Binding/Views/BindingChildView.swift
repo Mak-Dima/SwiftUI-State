@@ -22,13 +22,13 @@ struct BindingChildView: View {
             VStack(alignment: .center, spacing: 20) {
                 Text(data ?? "No data")
                     .phaseAnimator([true, false]) { content, phase in
-                        content.rotationEffect(phase ? .degrees(5) : .degrees(-5))
+                        content.rotationEffect(phase ? .degrees(1) : .degrees(-1))
                     } animation: { phase in
                         phase ? .bouncy(duration: 0.5) : .spring(duration: 0.5)
                     }
                 Text(value.wrappedValue ?? "No data")
                     .phaseAnimator([true, false]) { content, phase in
-                        content.rotationEffect(phase ? .degrees(-5) : .degrees(5))
+                        content.rotationEffect(phase ? .degrees(-1) : .degrees(1))
                     }
             }
             .ignoresSafeArea()
@@ -36,14 +36,16 @@ struct BindingChildView: View {
             .background( Color.green.mix(with: Color.gray, by: 0.7) )
             .fontWeight(.bold)
             .fontDesign(.monospaced)
-        }
-        .overlay {
+            
             RoundedRectangle(cornerRadius: 150)
-                .frame(width: 300, height: 300)
                 .foregroundStyle (
-                    RadialGradient(colors: [.orange, .white], center: .center, startRadius: 60, endRadius: 200).opacity(0.2)
+                    RadialGradient(colors: [.orange, .white], center: .center, startRadius: 50, endRadius: 180).opacity(0.2)
                 )
-                .shadow(color: .white,radius: 15)
+                .phaseAnimator([true, false]) {content, phase in
+                    content
+                    .frame(width: phase ? 300 : 290, height: phase ? 300 : 290)
+                    .shadow(color: .white, radius: phase ? 5 : 20)
+                }
         }
     }
 }
