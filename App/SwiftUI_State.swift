@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftUI_State: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStateBlankView()
+//            NavigationStateBlankView()
+            BindingBlankView()
         }
     }
 }
