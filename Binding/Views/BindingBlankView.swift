@@ -14,26 +14,31 @@ struct BindingBlankView: View {
     var bindableValue: State<String?> = .init(wrappedValue: "Parent Value")
     
     var body: some View {
-        NavigationStack {
+        NavigationStack{
             ZStack {
                 Color.blue.mix(with: .green, by: 0.3)
                 
-                NavigationLink {
-                    BindingChildView(
-                        data: $bindableData,
-                        // Manual call of .projectedValue instead of $ sign
-                        value: bindableValue.projectedValue
-                    )
-                } label: {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundStyle(Color.orange)
-                            .phaseAnimator([true, false]) { content, phase in
-                                content.frame(maxWidth: phase ? 200 : 190, maxHeight: 100)
-                            }
-                        
-                        Text("Tap")
-                            .foregroundStyle(Color.white)
+                VStack {
+                    Text(bindableData ?? "No Data")
+                    Text(bindableValue.wrappedValue ?? "No Data")
+
+                    NavigationLink {
+                        BindingChildView(
+                            data: $bindableData,
+                            // Manual call of .projectedValue instead of $ sign
+                            value: bindableValue.projectedValue
+                        )
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundStyle(Color.orange)
+                                .phaseAnimator([true, false]) { content, phase in
+                                    content.frame(maxWidth: phase ? 200 : 190, maxHeight: 100)
+                                }
+                            
+                            Text("Tap")
+                                .foregroundStyle(Color.white)
+                        }
                     }
                 }
             }
