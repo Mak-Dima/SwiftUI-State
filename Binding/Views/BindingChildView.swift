@@ -33,7 +33,7 @@ struct BindingChildView: View {
             RoundedRectangle(cornerRadius: 150)
                 .frame(width: 300, height: 300)
                 .foregroundStyle (
-                    RadialGradient(colors: [.white, .yellow], center: .center, startRadius: .zero, endRadius: 200).opacity(0.1)
+                    RadialGradient(colors: [.orange, .white], center: .center, startRadius: 60, endRadius: 200).opacity(0.2)
                 )
                 .shadow(color: .white,radius: 15)
         }
