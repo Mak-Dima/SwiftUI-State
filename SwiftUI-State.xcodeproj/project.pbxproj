@@ -30,11 +30,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		236B62A72F43A30900530DDA /* Binding */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Binding;
-			sourceTree = "<group>";
-		};
 		2392BEDA2F3EAFB90083F29F /* App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = App;
@@ -53,11 +48,6 @@
 		23E33E4D2F3FF5DB0088419F /* Resources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		23E33E4E2F3FF7630088419F /* State */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = State;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -95,8 +85,6 @@
 				2392BEF22F3EAFBA0083F29F /* SwiftUI-StateUITests */,
 				2392BED92F3EAFB90083F29F /* Products */,
 				23E33E4D2F3FF5DB0088419F /* Resources */,
-				23E33E4E2F3FF7630088419F /* State */,
-				236B62A72F43A30900530DDA /* Binding */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,10 +114,8 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				236B62A72F43A30900530DDA /* Binding */,
 				2392BEDA2F3EAFB90083F29F /* App */,
 				23E33E4D2F3FF5DB0088419F /* Resources */,
-				23E33E4E2F3FF7630088419F /* State */,
 			);
 			name = "SwiftUI-State";
 			packageProductDependencies = (
