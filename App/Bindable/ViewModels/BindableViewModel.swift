@@ -7,7 +7,16 @@
 
 import Foundation
 
+// Starting iOS 17, macOS 14 ... .
+// SwiftUI provides a Swift-specific implementation of the observer design pattern.
+// Use Observable macro instead of ObservableObject.
+//
+// Tracking optionals and collections, which is not possible with ObservableObject.
+// Using @State, @Environment instead @StateObject and @EnvironmentObject.
+// body reads observable properties, this can help improve app's performance.
 @Observable class BindableViewModel {
+    // The accessibility of the property determines wheather a property is observable.
+    // If property accessible, but has to be untracked use @ObservationIgnored.
     var data: BindableModel
     var ready: Bool = false
     var isLoading: Bool = true
