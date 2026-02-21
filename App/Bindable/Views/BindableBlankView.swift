@@ -17,7 +17,7 @@ struct BindableBlankView: View {
                 HStack(alignment: .center, spacing: 20) {
                     Spacer()
                     NavigationLink("Edit") {
-                        
+                        BindableBlankEditView(viewModel: viewModel)
                     }
                 }
                 .padding([.trailing], 40)
