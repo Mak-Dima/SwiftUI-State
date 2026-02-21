@@ -12,7 +12,18 @@ struct SwiftUI_State: App {
     var body: some Scene {
         WindowGroup {
 //            NavigationStateBlankView()
-            BindingBlankView()
+//            BindingBlankView()
+            BindableBlankView(
+                viewModel: BindableViewModel(
+                    BindableModel(
+                        id: UUID(),
+                        name: "Data from ViewModel",
+                        version: 1,
+                        subversion: 0,
+                        inUse: false
+                    )
+                )
+            )
         }
     }
 }

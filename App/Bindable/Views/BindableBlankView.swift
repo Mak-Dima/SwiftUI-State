@@ -44,6 +44,9 @@ struct BindableBlankView: View {
                 RadialGradient(colors: [.pink.mix(with: .red, by: 0.9), .indigo], center: .center, startRadius: 50, endRadius: 500)
             }
             .ignoresSafeArea()
+            .task {
+                await self.$viewModel.wrappedValue.prepareData()
+            }
         }
     }
 }
