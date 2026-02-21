@@ -13,7 +13,7 @@ struct BindableBlankView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .center, spacing: 20) {
+            VStack(alignment: .center, spacing: 40) {
                 HStack(alignment: .center, spacing: 20) {
                     Spacer()
                     NavigationLink("Edit") {
@@ -24,13 +24,19 @@ struct BindableBlankView: View {
                 .padding([.top, .bottom], 80)
                 
                 Text(viewModel.data.id.uuidString)
+                    .overlayTitleBadge("ID")
                 Text(viewModel.data.name)
+                    .overlayTitleBadge("Name", offsetX: -70)
                 Text(String(viewModel.data.version))
+                    .overlayTitleBadge("Version", offsetX: -80)
                 Text(String(viewModel.data.subversion))
+                    .overlayTitleBadge("Subversion", offsetX: -90)
                 Text(viewModel.data.inUse ? "In use" : "Not in use")
+                    .overlayTitleBadge("Used", offsetX: -70)
                 
                 Spacer()
             }
+            .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .buttonStyle(.glass)
             .buttonBorderShape(.roundedRectangle)
