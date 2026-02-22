@@ -9,18 +9,18 @@ import SwiftUI
 
 struct BindableBlankEditView: View {
     
-    @Bindable var viewModel: BindableViewModel
+    @Binding var model: BindableModel
     
     var body: some View {
         VStack(alignment: .center, spacing: 3) {
             Text("Name")
-            TextField("name", text: $viewModel.data.name)
+            TextField("name", text: $model.name)
             Text("Version")
-            TextField("version", value: $viewModel.data.version, format: .number)
+            TextField("version", value: $model.version, format: .number)
             Text("Subversion")
-            TextField("subversion", value: $viewModel.data.subversion, format: .number)
+            TextField("subversion", value: $model.subversion, format: .number)
             Text("Used")
-            Toggle("", isOn: $viewModel.data.inUse).labelsHidden()
+            Toggle("", isOn: $model.inUse).labelsHidden()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
@@ -33,14 +33,8 @@ struct BindableBlankEditView: View {
 }
 
 #Preview {
-    @Previewable @State var vm = BindableViewModel(
-        BindableModel(
-            id: UUID(),
-            name: "Test",
-            version: 1,
-            subversion: 0,
-            inUse: false
-        )
+    @Previewable @State var m = BindableModel(
+        id: UUID(), name: "test", version: 1, subversion: 0, inUse: false
     )
-    BindableBlankEditView(viewModel: vm)
+    BindableBlankEditView(model: $m)
 }

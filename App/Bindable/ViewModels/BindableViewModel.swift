@@ -17,28 +17,22 @@ import Foundation
 @Observable class BindableViewModel {
     // The accessibility of the property determines wheather a property is observable.
     // If property accessible, but has to be untracked use @ObservationIgnored.
-    var data: BindableModel
-    var ready: Bool = false
-    var isLoading: Bool = true
-    
-    init(_ data: BindableModel) {
-        self.data = data
-    }
+    var model: BindableModel?
+    var state: ViewState = .loading
     
     func prepareData() async {
         do {
             try await Task.sleep(for: .seconds(5))
-            self.data = BindableModel(
+            self.model = BindableModel(
                 id: UUID(),
                 name: "Test",
                 version: 1,
                 subversion: 0,
                 inUse: false
             )
-            self.ready = true
-            self.isLoading = false
+            self.state = .loaded
         } catch {
-            self.isLoading = true
+            self.state = .loading
         }
     }
 }

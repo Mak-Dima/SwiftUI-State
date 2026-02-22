@@ -13,17 +13,7 @@ struct SwiftUI_State: App {
         WindowGroup {
 //            NavigationStateBlankView()
 //            BindingBlankView()
-            BindableBlankView(
-                viewModel: BindableViewModel(
-                    BindableModel(
-                        id: UUID(),
-                        name: "Data from ViewModel",
-                        version: 1,
-                        subversion: 0,
-                        inUse: false
-                    )
-                )
-            )
+            BindableBlankView(viewModel: BindableViewModel())
         }
     }
 }

@@ -45,6 +45,11 @@
 			path = "SwiftUI-StateUITests";
 			sourceTree = "<group>";
 		};
+		23A1F36C2F4B9F0C00057B3E /* Core */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Core;
+			sourceTree = "<group>";
+		};
 		23E33E4D2F3FF5DB0088419F /* Resources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Resources;
@@ -80,6 +85,7 @@
 		2392BECF2F3EAFB90083F29F = {
 			isa = PBXGroup;
 			children = (
+				23A1F36C2F4B9F0C00057B3E /* Core */,
 				2392BEDA2F3EAFB90083F29F /* App */,
 				2392BEE82F3EAFBA0083F29F /* SwiftUI-StateTests */,
 				2392BEF22F3EAFBA0083F29F /* SwiftUI-StateUITests */,
@@ -115,6 +121,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				2392BEDA2F3EAFB90083F29F /* App */,
+				23A1F36C2F4B9F0C00057B3E /* Core */,
 				23E33E4D2F3FF5DB0088419F /* Resources */,
 			);
 			name = "SwiftUI-State";
